@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import BreadSessionList from "./BreadSessionList";
 
 class ChangeBreadAmount extends Component {
 
     state = this.props.bread;
 
     submitForm = (event) => {
-        const url = '/api/latest/bread-session'
+        const url = BreadSessionList.BACKEND_URL + '/api/latest/bread-session'
         const session = this.props.session;
         const i = session.breads.findIndex(b => b.id === this.state.id);
         session.breads[i].amount = event.target.value;

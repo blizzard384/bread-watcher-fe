@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import BreadSessionList from "./BreadSessionList";
 
 class JoinBreadSession extends Component {
 
     state = {hash: '', error: ''};
 
     submitForm = () => {
-        const url = '/api/latest/bread-session/' + this.state.hash;
+        const url = BreadSessionList.BACKEND_URL + '/api/latest/bread-session/' + this.state.hash;
         const requestOptions = {method: 'GET'};
 
         fetch(url, requestOptions)

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import moment from 'moment';
+import BreadSessionList from "./BreadSessionList";
 
 class AddBread extends Component {
 
@@ -8,7 +9,7 @@ class AddBread extends Component {
     state = this.initialState
 
     submitForm = () => {
-        const url = '/api/latest/bread-session'
+        const url = BreadSessionList.BACKEND_URL + '/api/latest/bread-session'
         const session = this.props.session;
         const timestamp = moment(new Date()).subtract(this.state.daysAgo, 'day');
         session.breads.push({id: session.breads.length, name: this.state.name, amount: 1, timestamp: timestamp})

@@ -6,6 +6,8 @@ import JoinBreadSession from "./JoinBreadSession";
 
 class BreadSessionList extends Component {
 
+    static BACKEND_URL = 'https://bread-watcher.herokuapp.com';
+
     initialState = {
         pass: '',
         breads: []

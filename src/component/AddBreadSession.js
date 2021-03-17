@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
+import BreadSessionList from "./BreadSessionList";
 
 class AddBreadSession extends Component {
 
     submitForm = () => {
-        const url = '/api/latest/bread-session'
+        const url = BreadSessionList.BACKEND_URL + '/api/latest/bread-session'
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -24,7 +24,7 @@ class ChangeBreadAmount extends Component {
     render() {
         return (
             <form>
-                <input type="range" step="0.2" min="0.0" max="1" value={this.state.amount} onMouseUp={this.submitForm} onChange={event => this.setState({amount: event.target.value})}/>
+                <input type="range" step="0.1" min="0.0" max="1" value={this.state.amount} onMouseUp={this.submitForm} onTouchEnd={this.submitForm} onChange={event => this.setState({amount: event.target.value})}/>
             </form>
         );
     }

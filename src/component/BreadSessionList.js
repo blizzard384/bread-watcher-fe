@@ -9,7 +9,7 @@ class BreadSessionList extends Component {
     static BACKEND_URL = 'https://bread-watcher.herokuapp.com';
 
     initialState = {
-        pass: '',
+        pass: localStorage.getItem('session_pass'),
         breads: []
     }
 
@@ -17,7 +17,7 @@ class BreadSessionList extends Component {
 
     sessionAdded = (data) => {
         this.setState(data);
-        this.forceUpdate();
+        localStorage.setItem('session_pass', this.state.pass);
     }
 
     render() {

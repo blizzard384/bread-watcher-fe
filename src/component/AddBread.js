@@ -27,10 +27,10 @@ class AddBread extends Component {
 
     render() {
         return (
-            <form class="form-inline mb-5">
-                <div className="form-group mb-2">
+            <form className="form-inline mb-5">
+                <div className="form-group col-3 px-0 mr-1">
                     <select value={this.state.daysAgo}
-                            onChange={event => this.setState({daysAgo: event.target.value})} className="form-control">
+                            onChange={event => this.setState({daysAgo: event.target.value})} className="form-control w-100">
                         <option value="0">Today</option>
                         <option value="1">1 day ago</option>
                         <option value="2">2 days ago</option>
@@ -39,11 +39,11 @@ class AddBread extends Component {
                         <option value="5">5 days ago</option>
                     </select>
                 </div>
-                <div className="form-group mx-2 mb-2">
+                <div className="form-group col-6 px-0 mr-1">
                     <input type="text" value={this.state.name}
-                           onChange={event => this.setState({name: event.target.value})} className="form-control" placeholder="Name"/>
+                           onChange={event => this.setState({name: event.target.value})} className="form-control w-100" placeholder="Name"/>
                 </div>
-                <input type="button" value="Add bread" onClick={this.submitForm} class="btn btn-primary mb-2"/>
+                <input type="button" value="Add" onClick={this.submitForm} class="btn btn-primary col-auto form-group"/>
             </form>
         );
     }

@@ -9,7 +9,7 @@ function App() {
             <h2 className="display-4">bread watcher</h2>
         </div>
         <BreadSessionList />
-        <p>🍞 Jan Berger</p>
+        <p className="mt-5">🍞 Jan Berger</p>
     </div>
   );
 }

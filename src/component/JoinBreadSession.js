@@ -26,9 +26,17 @@ class JoinBreadSession extends Component {
             <div>
                 <p>{this.state.error}</p>
                 <form>
-                    <input type="text" value={this.state.hash}
-                           onChange={event => this.setState({hash: event.target.value})}/>
-                    <input type="button" value="Join session" onClick={this.submitForm}/>
+                    <div className="input-group mb-2">
+                        <input type="text" value={this.state.hash}
+                               onChange={event => this.setState({hash: event.target.value})} className="form-control"
+                               placeholder="Session hash"
+                               aria-label="Session hash" aria-describedby="basic-addon2"/>
+                        <div className="input-group-append">
+                            <input type="button" value="Join session" onClick={this.submitForm}
+                                   className="btn btn-outline-secondary"/>
+                        </div>
+
+                    </div>
                 </form>
             </div>
         );

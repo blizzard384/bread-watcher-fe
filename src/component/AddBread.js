@@ -27,37 +27,25 @@ class AddBread extends Component {
 
     render() {
         return (
-            <form>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <select value={this.state.daysAgo}
-                                    onChange={event => this.setState({daysAgo: event.target.value})}>
-                                <option value="0">Today</option>
-                                <option value="1">1 day ago</option>
-                                <option value="2">2 days ago</option>
-                                <option value="3">3 days ago</option>
-                                <option value="4">4 days ago</option>
-                                <option value="5">5 days ago</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="text" value={this.state.name}
-                                   onChange={event => this.setState({name: event.target.value})}/>
-                        </td>
-                        <td>
-                            <input type="button" value="Add bread" onClick={this.submitForm}/>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+            <form class="form-inline mb-5">
+                <div className="form-group mb-2">
+                    <select value={this.state.daysAgo}
+                            onChange={event => this.setState({daysAgo: event.target.value})} className="form-control">
+                        <option value="0">Today</option>
+                        <option value="1">1 day ago</option>
+                        <option value="2">2 days ago</option>
+                        <option value="3">3 days ago</option>
+                        <option value="4">4 days ago</option>
+                        <option value="5">5 days ago</option>
+                    </select>
+                </div>
+                <div className="form-group mx-2 mb-2">
+                    <input type="text" value={this.state.name}
+                           onChange={event => this.setState({name: event.target.value})} className="form-control" placeholder="Name"/>
+                </div>
+                <input type="button" value="Add bread" onClick={this.submitForm} class="btn btn-primary mb-2"/>
             </form>
         );
-    }
-
-    componentDidMount() {
-        setInterval(() => this.setState({timestamp: new Date()}), 1000)
     }
 }
 

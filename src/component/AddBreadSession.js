@@ -19,7 +19,7 @@ class AddBreadSession extends Component {
     render() {
         return (
             <form>
-                <input type="button" value="Add session" onClick={this.submitForm} />
+                <input type="button" value="Create session" onClick={this.submitForm} class="btn btn-primary" />
             </form>
         );
     }
